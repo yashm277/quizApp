@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import Login from './components/auth/login';
+import Quiz from './components/quizTaker/quiz';
+import Profile from './components/quizTaker/profile';
+import Error from './components/error/Error';
 import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/login" />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route index path="/quiz" element={<Quiz />} />
+                    <Route index path="/profile" element={<Profile />} />
+                    {/* <Route path="/logout" element={<SignOut />} /> */}
+                    <Route path="*" element={<Error />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
