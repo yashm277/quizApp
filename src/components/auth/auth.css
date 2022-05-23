@@ -1,0 +1,9 @@
+.flex-wrapper{
+    display: flex;
+}
+
+.auth-login-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
