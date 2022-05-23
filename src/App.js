@@ -12,6 +12,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Navigate to="/login" />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/quiz/logout" element={<Navigate to="/login" />} />
                     <Route index path="/quiz" element={<Quiz />} />
                     <Route index path="/profile" element={<Profile />} />
                     {/* <Route path="/logout" element={<SignOut />} /> */}

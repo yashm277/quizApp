@@ -1,4 +1,5 @@
 import { getAuth, getRedirectResult } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Quiz = () => {
     const auth = getAuth();
@@ -16,9 +17,19 @@ const Quiz = () => {
             console.log(err);
         });
 
+        const navigate = useNavigate();
+
+        // const logout = () => {
+        //     localStorage.clear();
+        //     history.push('../login')
+        // }
+
     return (
         <div>
             <div>hello</div>
+            <button class='logoutbtn' onClick={()=>navigate('./logout')}>
+                Logout
+            </button>
         </div>
     );
 };
